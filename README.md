@@ -1,5 +1,14 @@
-# atlassian
+# Atlassian
 It's Atlassian docker compose file, to run Atlassian products with docker on one single machine.
+
+### Disclaimer
+This is the modified version of https://github.com/omidraha/atlassian. In this repo, the volumes will be automatically mounted in your local directory.
+
+### How to use
+- clone the repo
+- Modify the versions of Jira, Confluence and Bitbucket in the `docker-compose.yml` to your desired version
+- Run docker-compose -p atlassian up
+- Then access your application (for example Jira http://localhost:8080)
 
 ```
 jira.example.com   wiki.example.com   bitbucket.example.com
@@ -69,18 +78,18 @@ How to use:
     ```
     $ export DOMAIN=example.com
      ```
- 
+
 3. Run docker compose:
 
 
     ```
     $ docker-compose -p atlassian up
     ```
-    
+
 4. Set `DNS` according to the above `DOMAIN` value, on somewhere that you want to connect to host of `docker-compose`:
 
 
-    ``` 
+    ```
     $ vim /etc/hosts
         127.0.0.1 jira.example.com www.jira.example.com
         127.0.0.1 wiki.example.com www.wiki.example.com
@@ -99,7 +108,7 @@ Replace `127.0.0.1` with IP of host that `docker-compose` command run on it.
        postgres=# \l
        postgres-# \q
     ```
-    
+
 6. Browse Atlassian products:
 
 
@@ -108,8 +117,8 @@ Replace `127.0.0.1` with IP of host that `docker-compose` command run on it.
         http://wiki.example.com
         http://bitbucket.example.com
         ```
-        
-Notes: 
+
+Notes:
 
 Data persisted on the  named volumes, to see them:
 
