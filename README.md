@@ -1,7 +1,7 @@
-# Atlassian
-It's Atlassian docker compose file, to run Atlassian products with docker on one single machine.
+# Atlassian Docker
+It's Atlassian docker compose file, to run Atlassian products (Jira, Confluence, Bitbucket) with docker on one single machine.
 
-How to use:
+### How to use:
 
 1. Clone the atlassian:
 
