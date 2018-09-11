@@ -1,14 +1,39 @@
 # Atlassian
 It's Atlassian docker compose file, to run Atlassian products with docker on one single machine.
 
-### Disclaimer
-This is the modified version of https://github.com/omidraha/atlassian. In this repo, the volumes will be automatically mounted in your local directory.
+How to use:
 
-### How to use
-- clone the repo
-- Modify the versions of Jira, Confluence and Bitbucket in the `docker-compose.yml` to your desired version
-- Run docker-compose -p atlassian up
-- Then access your application (for example Jira http://localhost:8080)
+1. Clone the atlassian:
+
+    ```
+    $ git clone https://github.com/omidraha/atlassian
+    ```
+
+2. Set environment variables:
+
+
+    ```
+    $ export DOMAIN=example.com
+     ```
+
+3. Run docker compose:
+
+
+    ```
+    $ docker-compose -p atlassian up
+    ```
+
+4. Set `DNS` according to the above `DOMAIN` value, on somewhere that you want to connect to host of `docker-compose`:
+
+
+    ```
+    $ vim /etc/hosts
+        127.0.0.1 jira.example.com www.jira.example.com
+        127.0.0.1 wiki.example.com www.wiki.example.com
+        127.0.0.1 bitbucket.example.com www.bitbucket.example.com
+    ```
+Replace `127.0.0.1` with IP of host that `docker-compose` command run on it.
+
 
 ```
 jira.example.com   wiki.example.com   bitbucket.example.com
@@ -63,39 +88,6 @@ Docker image source files:
 - [nginx](https://hub.docker.com/_/nginx/)
 - [postgres](https://hub.docker.com/_/postgres/)
 
-How to use:
-
-1. Clone the atlassian:
-
-
-    ```
-    $ git clone https://github.com/omidraha/atlassian
-    ```
-
-2. Set environment variables:
-
-
-    ```
-    $ export DOMAIN=example.com
-     ```
-
-3. Run docker compose:
-
-
-    ```
-    $ docker-compose -p atlassian up
-    ```
-
-4. Set `DNS` according to the above `DOMAIN` value, on somewhere that you want to connect to host of `docker-compose`:
-
-
-    ```
-    $ vim /etc/hosts
-        127.0.0.1 jira.example.com www.jira.example.com
-        127.0.0.1 wiki.example.com www.wiki.example.com
-        127.0.0.1 bitbucket.example.com www.bitbucket.example.com
-    ```
-Replace `127.0.0.1` with IP of host that `docker-compose` command run on it.
 
 5. Create Databases:
 
@@ -128,3 +120,7 @@ Data persisted on the  named volumes, to see them:
        local               atlassian_confluence-data
        local               atlassian_jira-data
        local               atlassian_database-data
+
+### Disclaimer
+This is the modified version of https://github.com/omidraha/atlassian.
+In this repo, the volumes will be automatically mounted in your local directory.
