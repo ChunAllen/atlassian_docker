@@ -6,7 +6,7 @@ It's Atlassian docker compose file, to run Atlassian products (Jira, Confluence,
 1. Clone the atlassian:
 
     ```
-    $ git clone https://github.com/omidraha/atlassian
+    $ git clone git@github.com:ChunAllen/atlassian_docker.git
     ```
 
 2. Set environment variables:

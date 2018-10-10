@@ -12,7 +12,7 @@ services:
       - "8080:8080"
 
   confluence:
-    image: cptactionhank/atlassian-confluence:5.8.16
+    image: cptactionhank/atlassian-confluence:6.10.1
     restart: always
     links:
       - jira
